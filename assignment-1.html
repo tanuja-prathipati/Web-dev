@@ -20,19 +20,24 @@
         border-radius: 5px;
       }
 
-      summary {
+      .header {
         background-color: #f0f0f0;
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 5px;
+        cursor: pointer;
       }
 
-      summary:hover {
+      .header:hover {
         background-color: #e0e0e0;
       }
 
       .content {
         padding: 0 15px;
+        display: none;
+      }
+
+      .content.show {
         display: block;
       }
     </style>
@@ -43,32 +48,35 @@
     </header>
     <main>
       <section>
-        <details>
-          <summary>Early Life</summary>
-          <div class="content">
-            <p>Tanuja lives in Hyderabad...</p>
-          </div>
-        </details>
+        <div class="header" onclick="toggleContent('earlyLife')">
+          Early Life
+        </div>
+        <div class="content" id="earlyLife">
+          <p>Tanuja lives in Hyderabad...</p>
+        </div>
       </section>
       <section>
-        <details>
-          <summary>Education</summary>
-          <div class="content">
-            <p>
-              Tanuja studies at Gokaraju Rangaraju Institute of Engineering and
-              Technology...
-            </p>
-          </div>
-        </details>
+        <div class="header" onclick="toggleContent('education')">Education</div>
+        <div class="content" id="education">
+          <p>
+            Tanuja studies at Gokaraju Rangaraju Institute of Engineering and
+            Technology...
+          </p>
+        </div>
       </section>
       <section>
-        <details>
-          <summary>Hobbies</summary>
-          <div class="content">
-            <p>Tanuja's favorite hobby is dancing.</p>
-          </div>
-        </details>
+        <div class="header" onclick="toggleContent('hobbies')">Hobbies</div>
+        <div class="content" id="hobbies">
+          <p>Tanuja's favorite hobby is dancing.</p>
+        </div>
       </section>
     </main>
+
+    <script>
+      function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.classList.toggle("show");
+      }
+    </script>
   </body>
 </html>
