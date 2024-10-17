@@ -3,80 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tanuja's Wiki Page</title>
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 20px;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      section {
-        margin: 10px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-
-      .header {
-        background-color: #f0f0f0;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .header:hover {
-        background-color: #e0e0e0;
-      }
-
-      .content {
-        padding: 0 15px;
-        display: none;
-      }
-
-      .content.show {
-        display: block;
-      }
-    </style>
+    <title>Tanuja Prathipati - Wikipedia-like Page</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
       <h1>Tanuja Prathipati</h1>
+      <nav id="toc">
+        <h2 id="tc">Table of Contents</h2>
+        <ul></ul>
+      </nav>
     </header>
-    <main>
-      <section>
-        <div class="header" onclick="toggleContent('earlyLife')">
-          Early Life
-        </div>
-        <div class="content" id="earlyLife">
-          <p>Tanuja lives in Hyderabad...</p>
-        </div>
-      </section>
-      <section>
-        <div class="header" onclick="toggleContent('education')">Education</div>
-        <div class="content" id="education">
-          <p>
-            Tanuja studies at Gokaraju Rangaraju Institute of Engineering and
-            Technology...
-          </p>
-        </div>
-      </section>
-      <section>
-        <div class="header" onclick="toggleContent('hobbies')">Hobbies</div>
-        <div class="content" id="hobbies">
-          <p>Tanuja's favorite hobby is dancing.</p>
-        </div>
-      </section>
-    </main>
+    <br />
 
-    <script>
-      function toggleContent(id) {
-        const content = document.getElementById(id);
-        content.classList.toggle("show");
-      }
-    </script>
+    <section class="collapsible" id="early-life">
+      <h2>Early Life</h2>
+      <div class="content">
+        <p>
+          I was born on 6 January 2005 in Hyderabad. From a young age, I have
+          aspired to become a software engineer.
+        </p>
+      </div>
+    </section>
+
+    <section class="collapsible" id="career">
+      <h2>Education</h2>
+      <div class="content">
+        <p>
+          I am currently studying B.Tech in my 3rd year at Gokaraju Rangaraju
+          Institute of Engineering and Technology (GRIET).
+        </p>
+        <h3>School</h3>
+        <div class="content">
+          <p>I studied in DAV Public school.</p>
+        </div>
+        <h3>Intermediate</h3>
+        <div class="content">
+          <p>I studied in Narayana Junior College.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="collapsible" id="hobbies">
+      <h2>Hobbies</h2>
+      <div class="content">
+        <p>I enjoy dancing in my free time.</p>
+      </div>
+    </section>
+
+    <script src="wiki.js"></script>
   </body>
 </html>
